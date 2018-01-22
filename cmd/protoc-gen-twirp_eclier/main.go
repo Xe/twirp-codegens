@@ -125,7 +125,7 @@ func (g *generator) generateCommand(file *descriptor.FileDescriptorProto, svc *d
 	g.P(`  arg[0] = script.verb`)
 	g.P(`  local flags = fs:parse(arg)`)
 	g.P("")
-	g.P(`  local resp = svc.`, svcName, `.`, methName, "(flags)")
+	g.P(`  local resp = svc.new(apiURL, token):`, svcName, `():`, methName, "(flags)")
 	g.P("")
 
 	for _, val := range retDef.Descriptor.GetField() {
