@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package us.xeserv.api;
+option go_package = "proto";
+
+service HelloWorld {
+  rpc Speak(Words) returns (Words) {};
+}
+
+message Words {
+  string message = 1;
+}
