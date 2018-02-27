@@ -165,10 +165,6 @@ func serviceName(service *descriptor.ServiceDescriptorProto) string {
 	return stringutils.SnakeCase(service.GetName())
 }
 
-func clientName(service *descriptor.ServiceDescriptorProto) string {
-	return serviceName(service) + "Client"
-}
-
 func fullServiceName(file *descriptor.FileDescriptorProto, service *descriptor.ServiceDescriptorProto) string {
 	name := serviceName(service)
 	if pkg := file.GetPackage(); pkg != "" {
@@ -198,31 +194,6 @@ func eclierFileName(f *descriptor.FileDescriptorProto, svcName, methodName strin
 	return name
 }
 
-// Given a protobuf name for a Message, return the Go name we will use for that
-// type, including its package prefix.
-func (g *generator) goTypeName(protoName string) string {
-	def := g.reg.MessageDefinition(protoName)
-	if def == nil {
-		gen.Fail("could not find message for", protoName)
-	}
-
-	var name string
-	for _, parent := range def.Lineage() {
-		name += parent.Descriptor.GetName() + "_"
-	}
-	name += def.Descriptor.GetName()
-	return name
-}
-
 func (g *generator) goPackageName(file *descriptor.FileDescriptorProto) string {
 	return g.fileToGoPackageName[file]
-}
-
-func fileDescSliceContains(slice []*descriptor.FileDescriptorProto, f *descriptor.FileDescriptorProto) bool {
-	for _, sf := range slice {
-		if f == sf {
-			return true
-		}
-	}
-	return false
 }
