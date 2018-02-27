@@ -2,14 +2,16 @@
 
 
 [[projects]]
-  branch = "master"
   name = "github.com/golang/protobuf"
   packages = [
+    "jsonpb",
     "proto",
     "protoc-gen-go/descriptor",
-    "protoc-gen-go/plugin"
+    "protoc-gen-go/plugin",
+    "ptypes/struct"
   ]
-  revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
+  revision = "925541529c1fa6821df4e44ce2723319eb2be768"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/pkg/errors"
@@ -18,19 +20,28 @@
   version = "v0.8.0"
 
 [[projects]]
-  branch = "Xe/feat/make-gen-public"
+  name = "github.com/twitchtv/protogen"
+  packages = [
+    ".",
+    "stringutils",
+    "typemap"
+  ]
+  revision = "6f52d8a9e353934b0086955f382c7a1536257125"
+  version = "v0.1.0"
+
+[[projects]]
   name = "github.com/twitchtv/twirp"
   packages = [
-    "exp/gen",
-    "exp/gen/stringutils",
-    "exp/gen/typemap"
+    ".",
+    "ctxsetters",
+    "internal/contextkeys"
   ]
-  revision = "e3dd5a1b97420399abc3b5e2d80aab102aa9330e"
-  source = "https://github.com/Xe/twirp"
+  revision = "1e149ba374383a4b74e836f6c9e54fede6b09c61"
+  version = "v5.3.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c23f0e6d8470d18eb7005b5a0071f6ee5b478345aee3cce99afee6e74a464c25"
+  inputs-digest = "6885aa496f5ecf51a1b5aee4fa4bd9cbb02cd6dcbba4c5749ecd0bb08f338d21"
   solver-name = "gps-cdcl"
   solver-version = 1
