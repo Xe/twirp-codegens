@@ -125,7 +125,7 @@ func (g *generator) generateProtobufLn(file *descriptor.FileDescriptorProto, ser
 		g.P("\t\t", `"twirp_method": "`, methName, `",`)
 		g.P("\t})")
 		g.P("\tctx = ln.WithF(ctx, input.F())")
-		g.P("\tresult, err = i.Next.", methName, "(ctx, input)")
+		g.P("\tresult, err = i.next.", methName, "(ctx, input)")
 		g.P("\tif err != nil {")
 		g.P("\t\tln.Error(ctx, err)")
 		g.P("\t} else {")
