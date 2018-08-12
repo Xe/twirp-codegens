@@ -68,7 +68,7 @@ func (g *generator) generateFile(file *descriptor.FileDescriptorProto) *plugin.C
 	g.P(`import "context"`)
 	g.P(`import "time"`)
 	g.P(`import "github.com/go-kit/kit/metrics"`)
-	g.P(`import hmetrics "github.com/heroku/x/go-kit/metrics"`)
+	g.P(`import "github.com/go-kit/kit/metrics/provider"`)
 	g.P()
 
 	for _, service := range file.Service {
@@ -97,7 +97,7 @@ func (g *generator) generateProtobufMetrics(file *descriptor.FileDescriptorProto
 	g.P("}")
 	g.P()
 
-	g.P("func New", svcName, "(next ", serviceName(service), ", prov hmetrics.Provider) ", serviceName(service), " {")
+	g.P("func New", svcName, "(next ", serviceName(service), ", prov provider.Provider) ", serviceName(service), " {")
 	g.P("\tvar result ", svcName)
 	g.P("\tresult.Next = next")
 	for _, method := range service.Method {

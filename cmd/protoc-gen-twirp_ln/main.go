@@ -128,8 +128,6 @@ func (g *generator) generateProtobufLn(file *descriptor.FileDescriptorProto, ser
 		g.P("\tresult, err = i.next.", methName, "(ctx, input)")
 		g.P("\tif err != nil {")
 		g.P("\t\tln.Error(ctx, err)")
-		g.P("\t} else {")
-		g.P("\t\tln.Log(ctx)")
 		g.P("\t}")
 		g.P("\treturn")
 		g.P("}")
