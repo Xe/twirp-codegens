@@ -106,7 +106,7 @@ func (g *generator) generateProtobufAnalytics(file *descriptor.FileDescriptorPro
 		g.P("func (i ", svcName, ") ", methName, "(ctx context.Context, input *", miType, ") (result *", moType, ", err error) {")
 		g.P("\tvar track analytics.Track")
 		g.P("\ttrack.Event = ", `"`, serviceName(service), " ", methName, `"`)
-		g.P("\ttrack.UserId = ln.GetFFromContext(ctx)[\"x_forwarded_for\"].(string)")
+		g.P("\ttrack.UserId = ln.FFromContext(ctx)[\"x_forwarded_for\"].(string)")
 		g.P("\tdefer func() {")
 		g.P("\t\tif err != nil {")
 		g.P("\t\t\ttrack.Event += ", `" Error"`)
