@@ -66,6 +66,7 @@ func (g *generator) generateFile(file *descriptor.FileDescriptorProto) *plugin.C
 	g.P()
 
 	g.P(`import "context"`)
+	g.P(`import "github.com/Xe/ln"`)
 	g.P(`import "gopkg.in/segmentio/analytics-go.v3"`)
 	g.P()
 
