@@ -6,7 +6,7 @@ package proto
 import "context"
 import "time"
 import "github.com/go-kit/kit/metrics"
-import hmetrics "github.com/heroku/x/go-kit/metrics"
+import "github.com/go-kit/kit/metrics/provider"
 
 // HelloWorldMetrics is a middleware for HelloWorld that collects timing and error rate data for servers.
 type HelloWorldMetrics struct {
@@ -15,7 +15,7 @@ type HelloWorldMetrics struct {
 	SpeakDurationNS metrics.Histogram
 }
 
-func NewHelloWorldMetrics(next HelloWorld, prov hmetrics.Provider) HelloWorld {
+func NewHelloWorldMetrics(next HelloWorld, prov provider.Provider) HelloWorld {
 	var result HelloWorldMetrics
 	result.Next = next
 	result.SpeakErrorCount = prov.NewCounter(`twirp.us.xeserv.api.hello_world.speak.error.count`)

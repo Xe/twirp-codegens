@@ -4,17 +4,16 @@
 package proto
 
 import "context"
-import "time"
 import "github.com/Xe/ln"
 
 // HelloWorldLogging is a middleware for HelloWorld that logs all usage of the methods
 type HelloWorldLogging struct {
-	Next HelloWorld
+	next HelloWorld
 }
 
 func NewHelloWorldLogging(next HelloWorld) HelloWorld {
 	var result HelloWorldLogging
-	result.Next = next
+	result.next = next
 	return result
 }
 
@@ -25,11 +24,9 @@ func (i HelloWorldLogging) Speak(ctx context.Context, input *Words) (result *Wor
 		"twirp_method": "Speak",
 	})
 	ctx = ln.WithF(ctx, input.F())
-	result, err = i.Next.Speak(ctx, input)
+	result, err = i.next.Speak(ctx, input)
 	if err != nil {
 		ln.Error(ctx, err)
-	} else {
-		ln.Log(ctx)
 	}
 	return
 }

@@ -29,7 +29,7 @@ func (m *Words) Reset()         { *m = Words{} }
 func (m *Words) String() string { return proto.CompactTextString(m) }
 func (*Words) ProtoMessage()    {}
 func (*Words) Descriptor() ([]byte, []int) {
-	return fileDescriptor_test_fa7b6876f4f07dc3, []int{0}
+	return fileDescriptor_test_958cc424d63412e3, []int{0}
 }
 func (m *Words) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Words.Unmarshal(m, b)
@@ -60,9 +60,9 @@ func init() {
 	proto.RegisterType((*Words)(nil), "us.xeserv.api.Words")
 }
 
-func init() { proto.RegisterFile("test.proto", fileDescriptor_test_fa7b6876f4f07dc3) }
+func init() { proto.RegisterFile("test.proto", fileDescriptor_test_958cc424d63412e3) }
 
-var fileDescriptor_test_fa7b6876f4f07dc3 = []byte{
+var fileDescriptor_test_958cc424d63412e3 = []byte{
 	// 127 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2a, 0x49, 0x2d, 0x2e,
 	0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x2d, 0x2d, 0xd6, 0xab, 0x48, 0x2d, 0x4e, 0x2d,
