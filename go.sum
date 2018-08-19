@@ -1,9 +1,17 @@
+github.com/Xe/ln v0.1.2 h1:VTF6Z95Kdd6S1RSjpnn0DFJV5Do9cfmHTHsE9OGI1dw=
+github.com/Xe/ln v0.1.2/go.mod h1:GWZDvjL0ZC/9SSjY8DJ2IOrID6Lejs7D8pgQyjqMYSk=
+github.com/axiomhq/hyperloglog v0.0.0-20180317131949-fe9507de0228 h1:6rB1A80KrH56CUeQMp1a4fzEw44N8Jum9rs1Fihv2tA=
+github.com/axiomhq/hyperloglog v0.0.0-20180317131949-fe9507de0228/go.mod h1:IOXAcuKIFq/mDyuQ4wyJuJ79XLMsmLM+5RdQ+vWrL7o=
+github.com/dgryski/go-metro v0.0.0-20180109044635-280f6062b5bc h1:8WFBn63wegobsYAX0YjD+8suexZDga5CctH4CCTx2+8=
+github.com/dgryski/go-metro v0.0.0-20180109044635-280f6062b5bc/go.mod h1:c9O8+fpSOX1DM8cPNSkX/qsBWdkD4yd2dpciOWQjpBw=
 github.com/go-kit/kit v0.7.0 h1:ApufNmWF1H6/wUbAG81hZOHmqwd0zRf8mNfLjYj/064=
 github.com/go-kit/kit v0.7.0/go.mod h1:xBxKIO96dXMWWy0MnWVtmwkA9/13aqxPnvrjFYMA2as=
 github.com/golang/protobuf v1.0.0 h1:lsek0oXi8iFE9L+EXARyHIjU5rlWIhhTkjDz3vHhWWQ=
 github.com/golang/protobuf v1.0.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.1.0 h1:0iH4Ffd/meGoXqF2lSAhZHt8X+cPgkfn/cb6Cce5Vpc=
 github.com/golang/protobuf v1.1.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
+github.com/heroku/x v0.0.0-20180719221634-1de401e1ba0e h1:2sIH0Ui2uiO+B5xqsqyGn0DvYBPsB0ukXXc4FwTZfBE=
+github.com/heroku/x v0.0.0-20180719221634-1de401e1ba0e/go.mod h1:opmAyjmIGn9/Y+9Nia6eIaktIXIoMhhFXEFbHLMsX3Y=
 github.com/iancoleman/strcase v0.0.0-20180726023541-3605ed457bf7 h1:ux/56T2xqZO/3cP1I2F86qpeoYPCOzk+KF/UH/Ar+lk=
 github.com/iancoleman/strcase v0.0.0-20180726023541-3605ed457bf7/go.mod h1:SK73tn/9oHe+/Y0h39VT4UCxmurVJkR5NA7kMEAOgSE=
 github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
@@ -13,3 +21,4 @@ github.com/twitchtv/protogen v0.1.0/go.mod h1:jNxPwuzmhx8IkYq4Z5Qx6PWty1cQZZW9UV
 github.com/twitchtv/twirp v5.3.0+incompatible/go.mod h1:RRJoFSAmTEh2weEqWtpPE3vFK5YBhA6bqp2l1kfCC5A=
 github.com/twitchtv/twirp v5.4.2+incompatible h1:xK9ZMCpTZZ7wZlaszCake2/EkvZaH8aMIGIvai3W5mQ=
 github.com/twitchtv/twirp v5.4.2+incompatible/go.mod h1:RRJoFSAmTEh2weEqWtpPE3vFK5YBhA6bqp2l1kfCC5A=
+golang.org/x/net v0.0.0-20180811021610-c39426892332/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
