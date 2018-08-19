@@ -23,10 +23,9 @@ func (i HelloWorldLogging) Speak(ctx context.Context, input *Words) (result *Wor
 		"twirp_service": "HelloWorld",
 		"twirp_method": "Speak",
 	})
-	ctx = ln.WithF(ctx, input.F())
 	result, err = i.next.Speak(ctx, input)
 	if err != nil {
-		ln.Error(ctx, err)
+		ln.Error(ctx, err, input)
 	}
 	return
 }

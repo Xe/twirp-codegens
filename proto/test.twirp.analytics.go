@@ -4,6 +4,7 @@
 package proto
 
 import "context"
+import "github.com/Xe/ln"
 import "gopkg.in/segmentio/analytics-go.v3"
 
 // HelloWorldAnalytics is a middleware for HelloWorld that collects timing and error rate data for servers.
@@ -21,12 +22,16 @@ func NewHelloWorldAnalytics(next HelloWorld, client analytics.Client) HelloWorld
 
 func (i HelloWorldAnalytics) Speak(ctx context.Context, input *Words) (result *Words, err error) {
 	var track analytics.Track
-	track.Event = "HelloWorldAnalytics Speak"
+	track.Event = "HelloWorld Speak"
+	track.UserId = ln.GetFFromContext(ctx)["x_forwarded_for"].(string)
 	defer func() {
 		if err != nil {
 			track.Event += " Error"
 		}
-		i.client.Enqueue(track)
+		err = i.client.Enqueue(track)
+		if err != nil {
+			ln.Error(ctx, err)
+		}
 	}()
 
 	result, err = i.Next.Speak(ctx, input)
