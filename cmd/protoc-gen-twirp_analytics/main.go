@@ -66,7 +66,6 @@ func (g *generator) generateFile(file *descriptor.FileDescriptorProto) *plugin.C
 	g.P()
 
 	g.P(`import "context"`)
-	g.P(`import "github.com/Xe/ln"`)
 	g.P(`import "gopkg.in/segmentio/analytics-go.v3"`)
 	g.P()
 
@@ -106,7 +105,7 @@ func (g *generator) generateProtobufAnalytics(file *descriptor.FileDescriptorPro
 		g.P("func (i ", svcName, ") ", methName, "(ctx context.Context, input *", miType, ") (result *", moType, ", err error) {")
 		g.P("\tvar track analytics.Track")
 		g.P("\ttrack.Event = ", `"`, serviceName(service), " ", methName, `"`)
-		g.P("\ttrack.UserId = ln.FFromContext(ctx)[\"x_forwarded_for\"].(string)")
+		g.P("\ttrack.UserId = `filthy casuals`")
 		g.P("\tdefer func() {")
 		g.P("\t\tif err != nil {")
 		g.P("\t\t\ttrack.Event += ", `" Error"`)
